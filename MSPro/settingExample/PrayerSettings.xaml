@@ -1,0 +1,517 @@
+﻿<Page
+    x:Class="MuslimSuitePro.PrayerSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MuslimSuitePro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomAppBar1" Padding="10,0,10,0" AutomationProperties.Name="Bottom App Bar">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="LeftPanel" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+                    <Button x:Name="home" Style="{StaticResource HomeAppBarButtonStyle}" Tag="home" IsEnabled="False" Click="home_Click" />
+                    <Button x:Name="save" Style="{StaticResource SaveAppBarButtonStyle}" Tag="save" Click="save_Click" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" />
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="Layout_Root" Margin="0,0,0,0" Visibility="Visible">
+        <Grid Name="landScapeMode" Visibility="Visible">
+            <Grid.Background>
+                <ImageBrush x:Name="backGroundImage"  ImageSource="" Opacity="100"/>
+            </Grid.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="650"/>
+                </Grid.RowDefinitions>
+                <!--Title Area-->
+                <Grid Background="#FF1B1919" Opacity="0.9" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="40,15,15,15" VerticalAlignment="Bottom" Foreground="White" Name="tbHeading" Text="Settings" FontSize="45" FontWeight="Bold" />
+                    </StackPanel>
+                </Grid>
+                
+                <!--Editing Area-->
+                <Border BorderBrush="White" BorderThickness="5" CornerRadius="10" Grid.Column="0" Grid.Row="1" Margin="50">
+                    <Grid Background="White" Opacity="0.6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <!--left hand panel-->
+                        <StackPanel Orientation="Vertical" Margin="10" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                            <TextBlock Margin="5,10,5,10" FontSize="25" FontStyle="Italic" FontWeight="Bold" Foreground="Black">Calculation</TextBlock>
+
+                            <!--Calculation Method-->
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Calculation Method: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <ComboBox Name="calcMethod" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                    <ComboBoxItem Content="Muslim World League" IsSelected="True" />
+                                    <ComboBoxItem Content="Islamic Society of North America" />
+                                    <ComboBoxItem Content="Egypt" />
+                                    <ComboBoxItem Content="Makkah" />
+                                    <ComboBoxItem Content="Karachi" />
+                                    <ComboBoxItem Content="Tehran" />
+                                    <ComboBoxItem Content="Jafari" />
+                                </ComboBox>
+                            </Grid>
+                            
+                            <!--Asr Method-->
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Asr Method: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <ComboBox Name="asrMethod" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                    <ComboBoxItem Content="Standard" IsSelected="True" />
+                                    <ComboBoxItem Content="Hanafi" />
+                                </ComboBox>
+                            </Grid>
+
+                            <!--Hight Altitude Method-->
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="High Altitude Method: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <ComboBox Name="hlMethod" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                    <ComboBoxItem Content="Midnight" IsSelected="True" />
+                                    <ComboBoxItem Content="Angle Based" />
+                                    <ComboBoxItem Content="One Seventh Based" />
+                                    <ComboBoxItem Content="None" />
+                                </ComboBox>
+                            </Grid>
+
+                            <!--TimeZone selection-->
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Timezone: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <ComboBox Name="timeZone" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                    <ComboBoxItem Content="Auto" IsSelected="True" />
+                                    <ComboBoxItem Content="-10" />
+                                    <ComboBoxItem Content="-09" />
+                                    <ComboBoxItem Content="-08" />
+                                    <ComboBoxItem Content="-07" />
+                                    <ComboBoxItem Content="-06" />
+                                    <ComboBoxItem Content="-05" />
+                                    <ComboBoxItem Content="-04" />
+                                    <ComboBoxItem Content="-03" />
+                                    <ComboBoxItem Content="-02" />
+                                    <ComboBoxItem Content="-01" />
+                                    <ComboBoxItem Content="+00" />
+                                    <ComboBoxItem Content="+01" />
+                                    <ComboBoxItem Content="+02" />
+                                    <ComboBoxItem Content="+03" />
+                                    <ComboBoxItem Content="+04" />
+                                    <ComboBoxItem Content="+05" />
+                                    <ComboBoxItem Content="+06" />
+                                    <ComboBoxItem Content="+07" />
+                                    <ComboBoxItem Content="+08" />
+                                    <ComboBoxItem Content="+09" />
+                                    <ComboBoxItem Content="+10" />
+                                    <ComboBoxItem Content="+11" />
+                                    <ComboBoxItem Content="+12" />
+                                    <ComboBoxItem Content="+13" />
+                                    <ComboBoxItem Content="+14" />
+                                </ComboBox>
+                            </Grid>
+
+                            <!--Daylight Saving Method-->
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Daylight Saving Mode: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <ComboBox Name="dayLightSaving" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                    <ComboBoxItem Content="No" IsSelected="True" />
+                                    <ComboBoxItem Content="Yes" />
+                                </ComboBox>
+                            </Grid>
+
+                            <!--Timeformat Saving Method-->
+                            <Grid Margin="5,10,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Time Format: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <ComboBox Name="timeformat" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                    <ComboBoxItem Content="24 Hours" IsSelected="True" />
+                                    <ComboBoxItem Content="12 Hours" />
+                                </ComboBox>
+                            </Grid>
+
+                            <TextBlock Margin="5,6,5,6" FontSize="15" FontStyle="Italic" FontWeight="Bold" Foreground="Black">Manually adjust times by increasing/decreasing minutes</TextBlock>
+
+                            <!--minutes adjustment settings-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--Fajr adjustment-->
+                                <Grid Margin="5,6,5,6" Grid.Row="0" Grid.Column="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Fajr: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="5,0,5,0" />
+                                    <ComboBox Name="fajrAdjustment" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="-10" />
+                                        <ComboBoxItem Content="-9" />
+                                        <ComboBoxItem Content="-8" />
+                                        <ComboBoxItem Content="-7" />
+                                        <ComboBoxItem Content="-6" />
+                                        <ComboBoxItem Content="-5" />
+                                        <ComboBoxItem Content="-4" />
+                                        <ComboBoxItem Content="-3" />
+                                        <ComboBoxItem Content="-2" />
+                                        <ComboBoxItem Content="-1" />
+                                        <ComboBoxItem Content="0" IsSelected="True" />
+                                        <ComboBoxItem Content="1" />
+                                        <ComboBoxItem Content="2" />
+                                        <ComboBoxItem Content="3" />
+                                        <ComboBoxItem Content="4" />
+                                        <ComboBoxItem Content="5" />
+                                        <ComboBoxItem Content="6" />
+                                        <ComboBoxItem Content="7" />
+                                        <ComboBoxItem Content="8" />
+                                        <ComboBoxItem Content="9" />
+                                        <ComboBoxItem Content="10" />
+
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--dhuhr Adjustment-->
+                                <Grid Margin="10,6,5,6" Grid.Row="0" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Dhuhr: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="dhuhrAdjustment" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="-10" />
+                                        <ComboBoxItem Content="-9" />
+                                        <ComboBoxItem Content="-8" />
+                                        <ComboBoxItem Content="-7" />
+                                        <ComboBoxItem Content="-6" />
+                                        <ComboBoxItem Content="-5" />
+                                        <ComboBoxItem Content="-4" />
+                                        <ComboBoxItem Content="-3" />
+                                        <ComboBoxItem Content="-2" />
+                                        <ComboBoxItem Content="-1" />
+                                        <ComboBoxItem Content="0" IsSelected="True" />
+                                        <ComboBoxItem Content="1" />
+                                        <ComboBoxItem Content="2" />
+                                        <ComboBoxItem Content="3" />
+                                        <ComboBoxItem Content="4" />
+                                        <ComboBoxItem Content="5" />
+                                        <ComboBoxItem Content="6" />
+                                        <ComboBoxItem Content="7" />
+                                        <ComboBoxItem Content="8" />
+                                        <ComboBoxItem Content="9" />
+                                        <ComboBoxItem Content="10" />
+
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--Asr Adjustment-->
+                                <Grid Margin="5,6,5,6" Grid.Row="1" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Asr: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="asrAdjustment" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="-10" />
+                                        <ComboBoxItem Content="-9" />
+                                        <ComboBoxItem Content="-8" />
+                                        <ComboBoxItem Content="-7" />
+                                        <ComboBoxItem Content="-6" />
+                                        <ComboBoxItem Content="-5" />
+                                        <ComboBoxItem Content="-4" />
+                                        <ComboBoxItem Content="-3" />
+                                        <ComboBoxItem Content="-2" />
+                                        <ComboBoxItem Content="-1" />
+                                        <ComboBoxItem Content="0" IsSelected="True" />
+                                        <ComboBoxItem Content="1" />
+                                        <ComboBoxItem Content="2" />
+                                        <ComboBoxItem Content="3" />
+                                        <ComboBoxItem Content="4" />
+                                        <ComboBoxItem Content="5" />
+                                        <ComboBoxItem Content="6" />
+                                        <ComboBoxItem Content="7" />
+                                        <ComboBoxItem Content="8" />
+                                        <ComboBoxItem Content="9" />
+                                        <ComboBoxItem Content="10" />
+
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--Maghrib Adjustment-->
+                                <Grid Margin="5,6,5,6" Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Maghrib: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="maghribAdjustment" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="-10" />
+                                        <ComboBoxItem Content="-9" />
+                                        <ComboBoxItem Content="-8" />
+                                        <ComboBoxItem Content="-7" />
+                                        <ComboBoxItem Content="-6" />
+                                        <ComboBoxItem Content="-5" />
+                                        <ComboBoxItem Content="-4" />
+                                        <ComboBoxItem Content="-3" />
+                                        <ComboBoxItem Content="-2" />
+                                        <ComboBoxItem Content="-1" />
+                                        <ComboBoxItem Content="0" IsSelected="True" />
+                                        <ComboBoxItem Content="1" />
+                                        <ComboBoxItem Content="2" />
+                                        <ComboBoxItem Content="3" />
+                                        <ComboBoxItem Content="4" />
+                                        <ComboBoxItem Content="5" />
+                                        <ComboBoxItem Content="6" />
+                                        <ComboBoxItem Content="7" />
+                                        <ComboBoxItem Content="8" />
+                                        <ComboBoxItem Content="9" />
+                                        <ComboBoxItem Content="10" />
+
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--Isha Adjustment-->
+                                <Grid Margin="5,6,5,6" Grid.Row="2" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Isha: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="ishaAdjustment" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="-10" />
+                                        <ComboBoxItem Content="-9" />
+                                        <ComboBoxItem Content="-8" />
+                                        <ComboBoxItem Content="-7" />
+                                        <ComboBoxItem Content="-6" />
+                                        <ComboBoxItem Content="-5" />
+                                        <ComboBoxItem Content="-4" />
+                                        <ComboBoxItem Content="-3" />
+                                        <ComboBoxItem Content="-2" />
+                                        <ComboBoxItem Content="-1" />
+                                        <ComboBoxItem Content="0" IsSelected="True" />
+                                        <ComboBoxItem Content="1" />
+                                        <ComboBoxItem Content="2" />
+                                        <ComboBoxItem Content="3" />
+                                        <ComboBoxItem Content="4" />
+                                        <ComboBoxItem Content="5" />
+                                        <ComboBoxItem Content="6" />
+                                        <ComboBoxItem Content="7" />
+                                        <ComboBoxItem Content="8" />
+                                        <ComboBoxItem Content="9" />
+                                        <ComboBoxItem Content="10" />
+                                    </ComboBox>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        
+                        <!--Right hand panel-->
+                        <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                            <TextBlock Margin="5,10,5,10" FontSize="25" FontStyle="Italic" FontWeight="Bold" Foreground="Black">Notification</TextBlock>
+
+                            <!--notification settings-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*" />
+                                    <ColumnDefinition Width="50*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--Fajr Notification-->
+                                <Grid Margin="5,10,5,10" Grid.Row="0" Grid.Column="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Fajr: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="5,0,5,0" />
+                                    <ComboBox Name="fajrNotification" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="None" IsSelected="True"  />
+                                        <ComboBoxItem Content="Beep" />
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--dhuhr Notification-->
+                                <Grid Margin="10,10,5,10" Grid.Row="0" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Dhuhr: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="dhuhrNotification" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="None" IsSelected="True" />
+                                        <ComboBoxItem Content="Beep" />
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--Asr Notification-->
+                                <Grid Margin="5,10,5,10" Grid.Row="1" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Asr: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="asrNotification" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="None" IsSelected="True" />
+                                        <ComboBoxItem Content="Beep" />
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--Maghrib Notification-->
+                                <Grid Margin="5,10,5,10" Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Maghrib: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="maghribNotification" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="None" IsSelected="True" />
+                                        <ComboBoxItem Content="Beep" />
+                                    </ComboBox>
+                                </Grid>
+
+                                <!--Isha Notification-->
+                                <Grid Margin="5,10,5,10" Grid.Row="2" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40*" />
+                                        <ColumnDefinition Width="60*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Isha: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                    <ComboBox Name="ishaNotification" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black">
+                                        <ComboBoxItem Content="None" IsSelected="True" />
+                                        <ComboBoxItem Content="Beep" />
+                                    </ComboBox>
+                                </Grid>
+                                
+                                
+                            </Grid>
+
+                            <TextBlock Margin="5,10,5,10" FontSize="25" FontStyle="Italic" FontWeight="Bold" Foreground="Black">Quran</TextBlock>
+
+                            <!--Translation Language-->
+                            <Grid Margin="5,6,5,6" Grid.Row="0" Grid.Column="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Translation: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="5,0,5,0" />
+                                <ComboBox Name="translationLanguage" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black" >
+                                    <ComboBoxItem Content="None" Tag="None" IsSelected="True"></ComboBoxItem>
+                                    <ComboBoxItem Content="Albanian" Tag="albanian" />
+                                    <ComboBoxItem Content="Amazigh" Tag="amazigh" />
+                                    <ComboBoxItem Content="Amharic" Tag="amharic" />
+                                    <ComboBoxItem Content="Arabic" Tag="arabic" />
+                                    <ComboBoxItem Content="Azerbaijani" Tag="azerbaijani"/>
+                                    <ComboBoxItem Content="Bengali" Tag="bengali" />
+                                    <ComboBoxItem Content="Bosnian" Tag="bosnian" />
+                                    <ComboBoxItem Content="Bulgarian" Tag="bulgarian" />
+                                    <ComboBoxItem Content="Chinese" Tag="chinese" />
+                                    <ComboBoxItem Content="Chinese Traditional" Tag="chinesetrad" />
+                                    <ComboBoxItem Content="Czech" Tag="czech" />
+                                    <ComboBoxItem Content="Divehi" Tag="divehi" />
+                                    <ComboBoxItem Content="Dutch" Tag="dutch" />
+                                    <ComboBoxItem Content="English" Tag="english" />
+                                    <ComboBoxItem Content="French" Tag="french" />
+                                    <ComboBoxItem Content="German" Tag="german" />
+                                    <ComboBoxItem Content="Hausa" Tag="hausa" />
+                                    <ComboBoxItem Content="Hindi" Tag="hindi" />
+                                    <ComboBoxItem Content="Indonesian" Tag="indonesian" />
+                                    <ComboBoxItem Content="Italian" Tag="italian" />
+                                    <ComboBoxItem Content="Japanese" Tag="japanese" />
+                                    <ComboBoxItem Content="Korean" Tag="korean" />
+                                    <ComboBoxItem Content="Kurdish" Tag="kurdish" />
+                                    <ComboBoxItem Content="Malay" Tag="Malay" />
+                                    <ComboBoxItem Content="Malayalam" Tag="malayalam" />
+                                    <ComboBoxItem Content="Norwegian" Tag="norwegian" />
+                                    <ComboBoxItem Content="Persian" Tag="persian" />
+                                    <ComboBoxItem Content="Polish" Tag="polish" />
+                                    <ComboBoxItem Content="Portugese" Tag="portugese" />
+                                    <ComboBoxItem Content="Romanian" Tag="romanian" />
+                                    <ComboBoxItem Content="Russian" Tag="russian" />
+                                    <ComboBoxItem Content="Sindhi" Tag="sindhi" />
+                                    <ComboBoxItem Content="Somali" Tag="somali" />
+                                    <ComboBoxItem Content="Spanish" Tag="spanish" />
+                                    <ComboBoxItem Content="Swahili" Tag="swahili" />
+                                    <ComboBoxItem Content="Swedish" Tag="swedish" />
+                                    <ComboBoxItem Content="Tajik" Tag="tajik" />
+                                    <ComboBoxItem Content="Tamil" Tag="tamil" />
+                                    <ComboBoxItem Content="Tatar" Tag="tatar" />
+                                    <ComboBoxItem Content="Thai" Tag="thai" />
+                                    <ComboBoxItem Content="Turkish" Tag="turkish" />
+                                    <ComboBoxItem Content="Urdu" Tag="urdu" />
+                                    <ComboBoxItem Content="Uyghur" Tag="uyghur" />
+                                    <ComboBoxItem Content="Uzbek" Tag="uzbek" />
+                                </ComboBox>
+                            </Grid>
+
+                            <Grid Margin="5,6,5,6" Grid.Row="0" Grid.Column="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*" />
+                                    <ColumnDefinition Width="60*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Chapter Name Display: " Foreground="Black" FontSize="20" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="5,0,5,0" />
+                                <ComboBox Name="suraLanguage" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="Black" >
+                                    <ComboBoxItem Content="Arabic" IsSelected="True"></ComboBoxItem>
+                                    <ComboBoxItem Content="English" Tag="albanian" />
+                                </ComboBox>
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" Background="Black" Opacity="1" Margin="5,10,5,6">
+                                <Button x:Name="resetBookmark" HorizontalAlignment="Stretch"   Background="#FF030A4B" BorderBrush="#FF000204" Foreground="White" FontWeight="Bold" Opacity="1" UseLayoutRounding="True" Click="resetBookmark_Click" >
+                                    Click to reset Quran reading bookmark
+                                </Button>
+                            </Grid>
+
+                            <Grid Name="downloadProgressGrid" Visibility="Collapsed" HorizontalAlignment="Stretch" Opacity="1" Margin="5,10,5,6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="29*"  />
+                                    <RowDefinition Height="21*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Name="messageBox" Text="Downloading..." VerticalAlignment="top" HorizontalAlignment="Center" Style="{StaticResource BasicTextStyle}" Foreground="Black" FontWeight="Bold" Height="20" />
+                                <ProgressBar Grid.Row="1" HorizontalAlignment="Center" Height="20" VerticalAlignment="top" Width="300" x:Name="DownloadProgress"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

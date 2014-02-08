@@ -1,0 +1,142 @@
+﻿<Page
+    x:Class="MuslimSuitePro.Holidays"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MuslimSuitePro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomAppBar1" Padding="10,0,10,0" AutomationProperties.Name="Bottom App Bar">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="LeftPanel" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+                    <Button x:Name="home" Style="{StaticResource HomeAppBarButtonStyle}" Tag="home" Click="home_Click" />
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+    
+    
+
+    <Grid x:Name="Layout_Root" Margin="0,0,0,0" Visibility="Visible">
+        <Grid Name="landScapeMode" Visibility="Visible">
+            <Grid.Background>
+                <ImageBrush x:Name="backGroundImage"  ImageSource="" Opacity="100"/>
+            </Grid.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="225*"/>
+                </Grid.RowDefinitions>
+                <Grid Background="#FF1B1919" Opacity="0.9" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="40,15,15,15" VerticalAlignment="Bottom" Foreground="White" Name="tbHeading" Text="2013 Holiday Calender" FontSize="45" FontWeight="Bold" />
+                    </StackPanel>
+                </Grid>
+
+                <Border BorderBrush="White" Grid.Column="0" Grid.Row="1" BorderThickness="5" CornerRadius="10" Margin="100">
+                <Grid Background="White"  Opacity="0.6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    
+                        <Grid Margin="0, 40, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                            <RowDefinition Height="5*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Row="0" Grid.Column="0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Jan 24, 2013 Thursday" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Milad Un Nabi"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Jan 29, 2013 Tuesday" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Milad Un Nabi (shia)"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="0" Grid.Column="2">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Jun 05, 2013 Wednesday" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold"  />
+                                    <TextBlock Text="Lailat Al Miraj"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Jun 23, 2013 Sunday"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Lailat Al Bara'ah" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Jul 09, 2013 Tuesday"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Ramadhan (start)"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="2">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Aug 03, 2013 Saturday"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Laylat Al Kadr"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="2" Grid.Column="0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Aug 08, 2013 Thursday"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Eid-al-fitr (end Of Ramadan)"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="2" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Oct 14, 2013 Monday"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Waqf Al Arafa - Hajj"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="2" Grid.Column="2">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Oct 15, 2013 Tuesday"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Eid-al-adha"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="3" Grid.Column="0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Nov 04, 2013 Monday"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Hijra - Islamic New Year"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Nov 13, 2013 Wednesday"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                    <TextBlock Text="Day Of Ashura"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" Foreground="Black" FontSize="20" FontWeight="Bold" />
+                                </StackPanel>
+                            </Grid>
+                    </Grid>
+                    
+                </Grid>
+                </Border>
+
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Page>

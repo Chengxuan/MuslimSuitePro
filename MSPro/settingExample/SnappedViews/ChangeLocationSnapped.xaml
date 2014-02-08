@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="MuslimSuitePro.SnappedViews.ChangeLocationSnapped"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MuslimSuitePro.SnappedViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bm="using:Bing.Maps"
+    xmlns:callisto="using:Callisto.Controls"
+    
+    IsTabStop="False"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomAppBar1" Padding="10,0,10,0" AutomationProperties.Name="Bottom App Bar">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="LeftPanel" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+                    <Button x:Name="saveSelection" Style="{StaticResource SaveAppBarButtonStyle}" Tag="Save" Click="saveSelection_Click"  />
+                    <Button x:Name="refreshLocation" Style="{StaticResource RefreshAppBarButtonStyle}" Tag="Save" Click="refreshLocation_Click"  />
+                    <!--<Button x:Name="cancelChanges" Style="{StaticResource DiscardAppBarButtonStyle}" Tag="Discard Changes" Click="cancelChanges_Click" /> -->
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <!--<Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">-->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="backGroundImage"  ImageSource="../images/globe-map.jpg" Opacity="100" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid Opacity="0.6" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Background="#FF1B1919" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
+                <TextBlock FontSize="35" Foreground="White" FontWeight="Bold" Text="Location" Margin="40,20,10,0 "/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,50,30,50">
+                <Border BorderBrush="Black" BorderThickness="4" Margin="0,0,0,0">
+                    <bm:Map Credentials="AnFYDfSw-YskOE7IVug5LB1iV_mt6Pxv7V4Zjf_C9S9ve-KaoMFR09VYXp0-yYWF" x:Name="myMap" ShowBuildings="False" ShowNavigationBar="False" ShowScaleBar="False" MapType="Road" ZoomLevel="16" Height="400">
+                        <bm:Map.Center>
+                            <bm:Location Latitude="53.2782" Longitude="-9.00827" />
+                        </bm:Map.Center>
+                    </bm:Map>
+                </Border>
+                <TextBlock Name="txtLocation" FontSize="20" Text="" TextAlignment="Center" Margin="10" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Global User Interface">
+
+                </TextBlock>
+                <!--
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition  Width="4*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Enter your address: " FontSize="20" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"></TextBlock>
+                    <TextBox Grid.Column="1" FontSize="20" Width="500" Height="17" Name="txtAddress" Margin="10"></TextBox>
+                </Grid>
+                -->
+            </StackPanel>
+        </Grid>
+        
+        <callisto:CustomDialog x:Name="showWelcome" Title="Welcome" Background="#054900" BackButtonVisibility="Collapsed">
+            <StackPanel Width="300">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock Margin="0,0,0,0" FontSize="14.6667" FontWeight="SemiLight" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        Welcome to Muslim Suite Pro. As it is your first time running this app. Wizard will take you through few configuration steps.
+                    </TextBlock>
+                </Grid>
+
+                <StackPanel Margin="0,10,0,0" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Name="closeShowWelcome" Content="OK" Width="90" Margin="0,0,20,0" Click="closeShowWelcome_Click"  />
+                </StackPanel>
+            </StackPanel>
+        </callisto:CustomDialog>
+
+    </Grid>
+
+</Page>

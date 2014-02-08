@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="38337AGilani.MuslimSuitePro" Publisher="CN=CE898FB8-054F-4A46-8122-76F6A6F7B0DC" Version="1.0.0.33" />
+  <Properties>
+    <DisplayName>Muslim Suite Pro</DisplayName>
+    <PublisherDisplayName>A Gilani</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="settingExample.App">
+      <VisualElements DisplayName="Muslim Suite Pro" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Muslim Suite Pro is an app essential for every Muslim in any part of the world. Using this app a Muslim can read quran in 1 of 44 languages, bookmark while reading and download more translations. This app gives a near exact times for the prayers of a whole week in a cluter less overview. The prayer calculation methods can be adjusted as well as minor adjustment of the times. App displays the next prayer time in the live tile and also gives a visual and or audio notification based on user choice. Never miss a prayer using this app's unique reminder service and keep the holy book in your language for daily read." ForegroundText="light" BackgroundColor="#019A02" ToastCapable="true">
+        <DefaultTile ShowName="allLogos" ShortName="Muslim Suite Pro" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#019A02" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>

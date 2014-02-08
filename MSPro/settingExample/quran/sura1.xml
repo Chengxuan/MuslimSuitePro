@@ -1,0 +1,45 @@
+<quran>
+<!--Created With XmlSplit (this appears in Trial Version only)0475280485802926-->
+<!--
+
+# PLEASE DO NOT REMOVE OR CHANGE THIS COPYRIGHT BLOCK
+#====================================================================
+#
+#  Tanzil Quran Text (Simple Enhanced, version 1.0.2)
+#  Copyright (C) 2008-2010 Tanzil.net
+#  License: Creative Commons Attribution 3.0
+#
+#  This copy of quran text is carefully produced, highly 
+#  verified and continuously monitored by a group of specialists 
+#  at Tanzil project.
+#
+#  TERMS OF USE:
+#
+#  - Permission is granted to copy and distribute verbatim copies 
+#    of this text, but CHANGING IT IS NOT ALLOWED.
+#
+#  - This quran text can be used in any website or application, 
+#    provided its source (Tanzil.net) is clearly indicated, and 
+#    a link is made to http://tanzil.net to enable users to keep
+#    track of changes.
+#
+#  - This copyright notice shall be included in all verbatim copies 
+#    of the text, and shall be reproduced appropriately in all files 
+#    derived from or containing substantial portion of this text.
+#
+#  Please check updates at: http://tanzil.net/updates/
+# 
+#====================================================================
+	
+-->
+
+	<sura index="1" name="الفاتحة">
+		<aya index="1" text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" />
+		<aya index="2" text="الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ" />
+		<aya index="3" text="الرَّحْمَٰنِ الرَّحِيمِ" />
+		<aya index="4" text="مَالِكِ يَوْمِ الدِّينِ" />
+		<aya index="5" text="إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ" />
+		<aya index="6" text="اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ" />
+		<aya index="7" text="صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ" />
+	</sura>
+	</quran><!--Created With XmlSplit (this appears in Trial Version only)000877446588537398-->

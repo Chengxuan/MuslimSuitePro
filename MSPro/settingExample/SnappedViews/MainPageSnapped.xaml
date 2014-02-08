@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="MuslimSuitePro.SnappedViews.MainPageSnapped"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MuslimSuitePro.SnappedViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Name="snapMode" Visibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Green">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="225*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="#FF1B1919" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="20,20,15,15" Foreground="White" Name="tbLocationSnapped" Text="" FontSize="30" FontWeight="Bold" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20,40,20,40">
+                <Border BorderBrush="Honeydew" BorderThickness="1" CornerRadius="5">
+                    <StackPanel Orientation="Vertical" Background="White" Opacity="0.8">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Name="tbSnappedDate1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,20" Foreground="DarkBlue" Text="" FontSize="15" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadImsak1" Grid.Row="1" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Imsak" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeImsak1" Grid.Row="2" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadFajr1" Grid.Row="3" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Fajr" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeFajr1" Grid.Row="4" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadSunrise1" Grid.Row="5" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Sunrise" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeSunrise1" Grid.Row="6" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadingDhur1" Grid.Row="7" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Dhuhr" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeDhur1" Grid.Row="8" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadingAsr1" Grid.Row="9" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Asr" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeAsr1" Grid.Row="10" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadSunset1" Grid.Row="11" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Sunset" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeSunset1" Grid.Row="12" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadingMaghrib1" Grid.Row="13" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Maghrib" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeMaghrib1" Grid.Row="14" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadingIsha1" Grid.Row="15" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Isha" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeIsha1" Grid.Row="16" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedHeadingMidnight1" Grid.Row="17" HorizontalAlignment="left" Margin="5, 0, 0, 0" Foreground="#FF464646"  Text="Midnight" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Name="tbSnappedTimeMidnight1" Grid.Row="18" HorizontalAlignment="Right"  Margin="5, 0, 5, 0" Foreground="Black"  Text="" FontSize="25" FontWeight="Bold" />
+
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
